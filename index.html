@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>William Durand</title>
+
+        <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+        <!--
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        -->
+
+        <link rel="stylesheet" href="css/custom.css">
+
+        <script>
+            if (window.location.search.match(/print-pdf/gi)) {
+                document.write('<link rel="stylesheet" href="css/pdf.css" type="text/css">');
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1 class="title"></h1>
+                    <em>William Durand - October 17th, 2014</em>
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Title
+                        </script>
+                    </section>
+                </section>
+            </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Thank You.
+
+                        ### Questions?
+
+                        <br>
+                        <br>
+                        <br>
+                        <ul class="me">
+                            <!--
+                            <li>
+                                <p><i class="fa fa-comments-o"></i><a href="https://joind.in/XXX" title="joindin">joind.in/XXX</a></p>
+                            </li>
+                            -->
+                            <li>
+                                <p><i class="fa fa-globe"></i><a href="http://williamdurand.fr" title="website">williamdurand.fr</a></p>
+                            </li>
+                            <li>
+                                <p><i class="fa fa-github"></i><a href="https://github.com/willdurand" title="github">github.com/willdurand</a></p>
+                            </li>
+                            <li>
+                                <p><i class="fa fa-twitter"></i><a href="https://twitter.com/couac" title="twitter">twitter.com/couac</a></p>
+                            </li>
+                        </ul>
+                    </script>
+                </section>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="reveal.js/lib/js/head.min.js"></script>
+        <script type="text/javascript" src="reveal.js/js/reveal.min.js"></script>
+        <script type="text/javascript">
+            Reveal.initialize({
+                slideNumber: !window.location.search.match(/print-pdf/gi),
+                history: true,
+
+                theme: Reveal.getQueryHash().theme,
+                transition: Reveal.getQueryHash().transition || 'concave',
+
+                dependencies: [
+                    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+        </script>
+    </body>
+</html>
