@@ -31,18 +31,190 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h1 class="title"></h1>
-                    <em>William Durand - October 17th, 2014</em>
+                    <h1 class="title">REST</h1>
+                    <em>William Durand - May 12nd, 2015</em>
                 </section>
 
                 <section>
                     <section data-markdown>
                         <script type="text/template">
-                            ## Title
+                            ## A Few Words on REST
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### **RE**presentational **S**tate **T**ransfer
+
+                            REST is the underlying architectural principle of the web.
+
+                            It is formalized as a set of **constraints**,
+                            described in<br>**Roy Fielding**'s dissertation.
+                        </script>
+                    </section>
+                    <section data-markdown class="no-border">
+                        <script type="text/template">
+                            ### **R**ichardson **M**aturity **M**odel
+
+                            ![](images/rmm.png)
+
+                            <p>
+                                <small>
+                                    [http://martinfowler.com/articles/richardsonMaturityModel.html](http://martinfowler.com/articles/richardsonMaturityModel.html)
+                                </small>
+                            </p>
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Levels 0, 1, and 2
+
+                            * It is all about **resources**
+                            * **Client** uses specific HTTP **verbs**
+                            * **Server** uses HTTP **status codes**
+                            * Content Negotiation
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Level 3 - Hypermedia Controls
+
+                            * Service discovery via link **relations**
+                            * **Hypermedia** formats (ATOM, HAL, JSON-LD, etc.)
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### HATEOAS
+
+                            **H**ypermedia **A**s **T**he **E**ngine **O**f **A**pplication **S**tate
+                            <br>
+                            <br>
+
+                            It means that hypermedia should be used to find your
+                            <br>way through the API.  It is all about **state
+                            transitions**.
+
+                            Your application is just a big **state machine**.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Profiles
+
+                            ...
                         </script>
                     </section>
                 </section>
-            </section>
+
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## State Of The <strike>Art</strike> Industry
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### We all want RESTful APIs.
+                        </script>
+                    </section>
+                    <section data-markdown class="no-border">
+                        <script type="text/template">
+                            ![](images/twitter-example.png)
+
+                            ### Yes.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Is My API RESTful when I Use JSON?
+
+                            <br>
+                            _[Short answer: no. Long answer: no, not yet.
+                            <br>
+                            RESTful API must use hypermedia formats.
+                            JSON is not<br>a hypermedia
+                            format](http://restcookbook.com/Mediatypes/json/),
+                            The REST CookBook_
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### s/REST/HTTP++
+
+                            REST APIs are a myth, i.e. too complex in real life.
+
+                            <br>
+
+                            _[99.99% of the RESTful APIs out there aren’t fully
+                            compliant<br>with Roy Fielding’s conception of
+                            REST](http://www.timelessrepo.com/haters-gonna-hateoas), Steve Klabnik_
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### No Relations = No REST
+
+                            <br>
+                            _[If the engine of application state (and hence the
+                            API)<br>is not being driven by hypertext, then it
+                            cannot be RESTful<br>and cannot be a REST API](http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven), Roy Fielding_
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### It Is Not Easy
+
+                            * Things that are not "CRUD" like
+                            * Pagination
+                            * Naming (of course)
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### PHP?
+
+                            Brace yourself, PHP has rock-solid tools.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Does It Matter?
+
+                            ![](images/nope.gif)
+                        </script>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Beyond The Constraints
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Introducing HTTP++ APIs
+
+                            Well-designed, pragmatic, and future-proof APIs.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Often Too Much
+
+                            * How many **clients** do you have?
+                            * Do you know any RESTful client?
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Facebook/Netflix
+
+                            GraphQL
+                        </script>
+                    </section>
+                </section>
 
                 <section data-markdown>
                     <script type="text/template">

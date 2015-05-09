@@ -1,0 +1,14 @@
+strike {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+h3 {
+    margin-bottom: 50px !important;
+}
+
+img.no-border,
+.no-border img {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
