@@ -1,0 +1,18 @@
+digraph ResourceState {
+    node [style=rounded, shape=box, fixedsize=false];
+
+    subgraph cluster0 {
+        label = "Initial state";
+        homepage1 [label = "Homepage"];
+        homepage1 -> homepage1 [label = " GET /"];
+        "User list (2 users)" -> "User list (2 users)" [label = " GET /users"];
+    }
+
+    subgraph cluster1 {
+        label = "New state";
+        "Homepage" -> "Homepage" [label = " GET /"];
+        "User list (3 users)" -> "User list (3 users)" [label = " GET /users"];
+    }
+
+    "User list (2 users)" -> "User list (3 users)" [label = " POST"]
+}

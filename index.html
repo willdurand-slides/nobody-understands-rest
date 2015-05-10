@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>William Durand</title>
+        <title>Nobody Understands REST but it is ok | William Durand</title>
 
         <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
@@ -28,8 +28,8 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h1 class="title">REST</h1>
-                    <em>William Durand - May 12nd, 2015</em>
+                    <h1 class="title">Nobody Understands REST<br><small>but it is ok ;-)</small></h1>
+                    <em>William Durand - May 12th, 2015</em>
                 </section>
 
                 <section>
@@ -46,7 +46,7 @@
                             REST is the underlying architectural principle of the web.
 
                             It is formalized as a set of **constraints**,
-                            described in<br>**Roy Fielding**'s dissertation.
+                            described in<br>**Roy Fielding**'s PhD dissertation.
                         </script>
                     </section>
                     <section data-markdown class="no-border">
@@ -76,8 +76,12 @@
                         <script type="text/template">
                             ### Level 3 - Hypermedia Controls
 
-                            * Service discovery via link **relations**
-                            * **Hypermedia** formats (ATOM, HAL, JSON-LD, etc.)
+                            * Service discovery via **relations**
+                            * **Hypermedia** formats (e.g. HTML, HAL, JSON-LD)
+                            * Resources are not that important, their **representations** are!
+                            * URI design does **not** matter (URI template)
+                            * **Client's experience** is crucial!
+                            * Protocol & **application semantics**
                         </script>
                     </section>
                     <section data-markdown>
@@ -95,12 +99,135 @@
                             Your application is just a big **state machine**.
                         </script>
                     </section>
+                    <section data-markdown class="no-border no-margin">
+                        <script type="text/template">
+                            ### Application State
+
+                            ![](images/application-state.png)
+                        </script>
+                    </section>
+                    <section data-markdown class="no-border">
+                        <script type="text/template">
+                            ### Resource State
+
+                            ![](images/resource-state.png)
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Resource vs Representation
+
+                            A **resource** can be anything, and can have<br>more than one representation.
+                            <br>
+                            <br>
+                            A **representation** describes resource state.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Protocol Semantics
+
+                            How the underlying resource should behave under HTTP?
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Application Semantics
+
+                            What specifically will happen to application or resource state?
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### The Semantic Challenge<sup>&#42;</sup>
+
+                            Some standards have a good protocol-level
+                            semantics<br>but no application-level
+                            semantics (_Collection+JSON_, _Atom_).
+                            <br>
+                            <br>
+
+                            Some standards define a lot of application-level semantics
+                            <br>but no protocol semantics (_Microformats_, _Microdata_).
+
+                            <br>
+                            <small>&#42; as described in Richardson and Amundsen's "RESTful Web APIs" book.</small>
+                        </script>
+                    </section>
                     <section data-markdown>
                         <script type="text/template">
                             ### Profiles
 
-                            * XMDP
-                            * ALPS
+                            A **profile** is **defined** to not alter the semantics of the<br>resource representation
+                            itself, but **to allow clients to<br>learn about additional semantics**, [RFC 6906](https://tools.ietf.org/html/rfc6906).
+                            <br>
+                            <br>
+                            It does not have to be **machine-readable** but it is recommended.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Examples
+
+                            * Traditional API documentation
+                            * XMDP (for HTML documents)
+                            * **ALPS** (XMDP on steroids)
+                            * Embedded documentation (as in HAL/Siren)
+                            * **JSON-LD**
+                        </script>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## So, How To Design An API?
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 1. List the semantic descriptors
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 2. Draw a state diagram
+
+                            * Each "box" represents one **kind of representation**
+                            * Arrows are the **state transitions** (HTTP requests)
+                            * Change descriptors to relations when it makes sense
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 3. Use string from existing profiles
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 4. Choose a media type
+
+                            Don't define your own, please.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 5. Write a **profile** that documents<br>your **application semantics**
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 6. Eat. Sleep. **Code.** Repeat.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### 7. Publish the "first" URL
+                        </script>
+                    </section>
+                    <section data-markdown class="no-border">
+                        <script type="text/template">
+                            ![](images/mmmh.jpg)
                         </script>
                     </section>
                 </section>
@@ -131,7 +258,7 @@
                             _[Short answer: no. Long answer: no, not yet.
                             <br>
                             RESTful API must use hypermedia formats.
-                            JSON is not<br>a hypermedia
+                            JSON is<br>**not** a hypermedia
                             format](http://restcookbook.com/Mediatypes/json/),
                             The REST CookBook_
                         </script>
@@ -146,7 +273,7 @@
 
                             _[99.99% of the RESTful APIs out there aren’t fully
                             compliant<br>with Roy Fielding’s conception of
-                            REST](http://www.timelessrepo.com/haters-gonna-hateoas), Steve Klabnik_
+                            REST](http://www.timelessrepo.com/haters-gonna-hateoas), Steve Klabnik_.
                         </script>
                     </section>
                     <section data-markdown>
@@ -156,23 +283,7 @@
                             <br>
                             _[If the engine of application state (and hence the
                             API)<br>is not being driven by hypertext, then it
-                            cannot be RESTful<br>and cannot be a REST API](http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven), Roy Fielding_
-                        </script>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                            ### It Is Not Easy
-
-                            * Things that are not "CRUD" like
-                            * Pagination
-                            * Naming (of course)
-                        </script>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                            ### PHP?
-
-                            Brace yourself, PHP has rock-solid tools.
+                            cannot be<br>RESTful and cannot be a REST API](http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven), Roy Fielding_.
                         </script>
                     </section>
                     <section data-markdown>
@@ -192,17 +303,11 @@
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            ### Introducing HTTP++ APIs
-
-                            Well-designed, pragmatic, and future-proof APIs.
-                        </script>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
                             ### Often Too Much
 
                             * How many **clients** do you have?
-                            * Do you know any RESTful client?
+                            * Do you know any (existing) RESTful client?
+                            * Writing smart clients is complicated
                         </script>
                     </section>
                     <section data-markdown>
@@ -220,6 +325,35 @@
                             [Pure REST: Slow, hard to program, and rare](http://extensionengine.com/netflix-moves-away-from-rest-for-its-api/), Netflix
                         </script>
                     </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Introducing HTTP++ APIs
+
+                            Well-designed, pragmatic, and future-proof APIs
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Design your API from a client perspective
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Think in terms of **representations**
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Stick to HTTP
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Still really want to build a RESTful API?
+
+                            Choose the **JSON-LD** format.
+                        </script>
+                    </section>
                 </section>
 
                 <section>
@@ -230,12 +364,17 @@
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            ### It's ok not to build RESTful APIs.
+                            ### It is ok not to build RESTful APIs
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            ### "REST" is a buzzword.
+                            ### "REST" is a (marketing) buzzword
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### REST is **not a silver bullet**
                         </script>
                     </section>
                 </section>
@@ -250,11 +389,9 @@
                         <br>
                         <br>
                         <ul class="me">
-                            <!--
                             <li>
-                                <p><i class="fa fa-comments-o"></i><a href="https://joind.in/XXX" title="joindin">joind.in/XXX</a></p>
+                                <p><i class="fa fa-comments-o"></i><a href="https://joind.in/14276" title="joindin">joind.in/14276</a></p>
                             </li>
-                            -->
                             <li>
                                 <p><i class="fa fa-globe"></i><a href="http://williamdurand.fr" title="website">williamdurand.fr</a></p>
                             </li>

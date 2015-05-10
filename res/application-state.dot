@@ -1,0 +1,8 @@
+digraph AppState {
+    node [style=rounded, shape=box, fixedsize=false];
+
+    "[null]" -> "Homepage" [label = " GET /"]
+    "Homepage" -> "User list" [label = " GET /users"]
+    "User list" -> "User list" [label = " POST /users"]
+    "User list" -> "User #123" [label = " GET /users/123"]
+}
