@@ -1,9 +1,9 @@
 h1.title {
-    font-size: 2.3em!important;
+    font-size: 2.8em!important;
 }
 
 strike {
-    color: rgba(0, 0, 0, 0.55);
+    color:transparent!important;
 }
 
 h3 {

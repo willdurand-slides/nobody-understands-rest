@@ -1,15 +1,17 @@
 digraph ResourceState {
-    node [style=rounded, shape=box, fixedsize=false];
+    graph [bgcolor=transparent,color=white,fontcolor=white];
+    node [style=rounded, shape=box, fixedsize=false,color=white,fontcolor=white];
+    edge [color=white,fontcolor=white];
 
     subgraph cluster0 {
-        label = "Initial state";
+        label = <<u>Initial state</u>>
         homepage1 [label = "Homepage"];
         homepage1 -> homepage1 [label = " GET /"];
         "User list (2 users)" -> "User list (2 users)" [label = " GET /users"];
     }
 
     subgraph cluster1 {
-        label = "New state";
+        label = <<u>New state</u>>;
         "Homepage" -> "Homepage" [label = " GET /"];
         "User list (3 users)" -> "User list (3 users)" [label = " GET /users"];
     }

@@ -1,5 +1,7 @@
 digraph AppState {
-    node [style=rounded, shape=box, fixedsize=false];
+    graph [bgcolor=transparent,color=white,fontcolor=white];
+    node [style=rounded, shape=box, fixedsize=false,color=white,fontcolor=white];
+    edge [color=white,fontcolor=white];
 
     "[null]" -> "Homepage" [label = " GET /"]
     "Homepage" -> "User list" [label = " GET /users"]

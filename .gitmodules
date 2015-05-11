@@ -4,6 +4,3 @@
 [submodule "font-awesome"]
 	path = font-awesome
 	url = https://github.com/FortAwesome/Font-Awesome.git
-[submodule "css/theme/mozilla"]
-	path = css/theme/mozilla
-    url = https://github.com/mozilla/Reveal-Mozilla-Theme.git
