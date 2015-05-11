@@ -148,6 +148,7 @@ body:after {
 .reveal a:not(.image):hover {
   color: #000;
   text-shadow: none;
+  text-decoration: underline;
   border: none; }
 
 .reveal p{
