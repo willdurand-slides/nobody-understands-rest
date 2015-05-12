@@ -194,6 +194,6 @@ ul, ol, div, p {
 	font-size: 16pt !important;
 }
 
-#logo {
-    bottom: -2cm;
+html, .reveal .slides section {
+    background-image: url(theme/mozilla/img/bg-blue-2.png);
 }
